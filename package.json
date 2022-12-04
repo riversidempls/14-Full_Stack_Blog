@@ -1,0 +1,35 @@
+{
+  "name": "14-full_stack_blog",
+  "version": "1.0.0",
+  "description": "Bootcamp challenge for MVC unit 14",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riversidempls/14-Full_Stack_Blog.git"
+  },
+  "keywords": [
+    "MVC",
+    "Sequelize",
+    "MySQL",
+    "Heroku"
+  ],
+  "author": "Conor Donnelly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/riversidempls/14-Full_Stack_Blog/issues"
+  },
+  "homepage": "https://github.com/riversidempls/14-Full_Stack_Blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.26.0"
+  }
+}
