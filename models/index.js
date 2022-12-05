@@ -17,6 +17,10 @@ Posts.hasMany(Comments, {
     onDelete: 'CASCADE',
 });
 
+// Posts.hasOne(Users, {
+//     //     foreignKey: 'user_id',
+//     //     onDelete: 'CASCADE',
+// });
 module.exports = {
     Users,
     Posts,
