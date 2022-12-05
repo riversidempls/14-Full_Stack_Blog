@@ -1,5 +1,8 @@
 // Dependencies
 const express = require('express');
+const routes = require('./routes');
+
+const sequelize = require('sequelize');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const hbs = exphbs.create({});
@@ -12,8 +15,14 @@ const PORT = process.env.PORT || 3001;
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// estabish static routing to public folder
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('./controllers/dish-routes'));
+
+// establish modular routing through routes folder
+app.use(routes);
+
+// need express json?
+app.use(express.json());
 
 // Starts the server to begin listening
 app.listen(PORT, () => {
