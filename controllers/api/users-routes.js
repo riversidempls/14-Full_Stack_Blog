@@ -6,7 +6,7 @@ const { Users, Posts } = require('../../models');
 
 // find all users
 // be sure to include their associated Posts
-//await User.findAll({ include: Invoice });
+//await User.findAll({ include: Posts });
 router.get('/', (req, res) => {
   Users.findAll({ include: Posts }).then((usersData) => {
     res.json(usersData);
