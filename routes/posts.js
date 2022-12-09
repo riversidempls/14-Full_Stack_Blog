@@ -8,26 +8,19 @@ const post_controller = require("../controllers/postController");
 
 
 const { Users, Posts } = require('../models');
-//
-router.get("/", (req, res, next) => {
-    res.send("Welcome to the users posts page.");
-});
+
 
 ///Try routing it to HBS view?
 
 // lists out posts
-router.get("/posts", async (req, res, next) => {
-    userdata = await Posts.findAll()
-    const Posts = postsdata.map((Posts) => Posts.get({ plain: true }));
-    res.render(Posts.body
-
-
-        // 'posts', {
-        // title: "Users Blog Posts ",
-        // posts: posts
+router.get('/', async (req, res, next) => {
+    postdata = await Posts.findAll()
+    const posts = postdata.map((posts) => posts.get({ plain: true }));
+    res.render('users/posts', {
+        title: "Blog Posts",
+        body: posts
     });
 });
-
 
 
 //About page route
