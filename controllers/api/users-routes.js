@@ -6,12 +6,26 @@ const { Users, Posts } = require('../../models');
 
 // find all users
 // be sure to include their associated Posts
-//await User.findAll({ include: Posts });
+//commenting lines below to try something else...
+
 router.get('/', (req, res) => {
   Users.findAll({ include: Posts }).then((usersData) => {
     res.json(usersData);
   });
 });
+
+
+//export all users?
+exports.getAllUsers = (req, res, next) => {
+  res.send(Users.fetchAll());
+};
+
+
+
+
+
+
+
 
 
 // find one user by their `id` value

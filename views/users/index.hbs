@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<div class="row">
+    {{#each username}}
+    <ul>
+        <li>{{this.username}}</li>
+    </ul>
+       {{else}}
+    <p>No users to display</p>
+    {{/each}}
+
+</div>
+
+
+    {{!-- <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                {{{editIcon users ../user id}}}
+            </div>
+            <div class="card-content center-align">
+                <h5>{{title}}</h5>
+                <p>{{stripTags (truncate body 150)}}</p>
+            </div>
+            <div class="card-action center-align">
+                <a href="/users/{{first_name}}" class="btn grey">Read More</a>
+            </div>
+        </div>
+    </div> --}}
