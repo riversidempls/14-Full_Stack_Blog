@@ -16,7 +16,7 @@ router.get("/", (req, res, next) => {
 ///Try routing it to HBS view?
 
 
-
+// lists out users
 router.get('/index', async (req, res, next) => {
     userdata = await Users.findAll({ include: Posts })
     const users = userdata.map((user) => user.get({ plain: true }));
@@ -25,6 +25,18 @@ router.get('/index', async (req, res, next) => {
         username: users
     });
 });
+
+// lists out posts
+router.get('/posts', async (req, res, next) => {
+    postdata = await Posts.findAll()
+    const posts = postdata.map((posts) => posts.get({ plain: true }));
+    res.render('users/posts', {
+        title: "Blog Posts",
+        body: posts
+    });
+});
+
+
 
 //About page route
 router.get("/about", function (req, res) {
